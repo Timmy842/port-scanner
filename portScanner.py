@@ -90,4 +90,13 @@ if __name__ == "__main__":
         print("Error: Opción inválida. Usa -ft para texto o -fj para JSON.")
         sys.exit(1)
 
+    if not (1 <= start_port <= 65535 and 1 <= end_port <= 65535):
+        print("Error: Los puertos deben estar en el rango 1-65535.")
+        sys.exit(1)
+
+    if start_port > end_port:
+        print("Error: El puerto inicial no puede ser mayor que el puerto final.")
+        sys.exit(1)
+
+
     port_scanner(target_ip, start_port, end_port, file_type)
