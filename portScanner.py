@@ -5,6 +5,8 @@ import socket
 import threading
 import time
 
+from helper import show_help
+
 #Contador de puertos
 open_ports = []
 
@@ -23,7 +25,7 @@ def scan_port(ip, port):
 
 # Función para escanear un rango de puertos
 def port_scanner(ip, start_port, end_port):
-    print(f"Usando IP: {target_ip}, Rango de puertos: {start_port}-{end_port}")
+    print(f"Usando IP: {target_ip}, Rango de puertos: {start_port} - {end_port}\n")
     threads = []
     start_time = time.time()
 
@@ -45,6 +47,10 @@ def port_scanner(ip, start_port, end_port):
 
 # Main
 if __name__ == "__main__":
+    if len(sys.argv) == 2 and sys.argv[1] in ("-h", "--help"):
+        show_help()
+        sys.exit(0)
+    
     if len(sys.argv) != 4:
         print("Uso: ps <target_ip> <start_port> <end_port>")
         sys.exit(1)
