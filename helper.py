@@ -3,7 +3,7 @@ def show_help():
 Port Scanner - Herramienta para escanear puertos abiertos.
 
 Uso:
-  portscanner <IP> <puerto_inicial> <puerto_final>
+  portscanner <IP> <puerto_inicial> <puerto_final> [-ft|-fj]
   portscanner -h | --help
 
 Argumentos:
@@ -13,8 +13,10 @@ Argumentos:
 
 Opciones:
   -h, --help        Muestra esta ayuda y termina.
+  -ft               Guarda los resultados en un archivo de texto.
+  -fj               Guarda los resultados en un archivo JSON.
 
 Ejemplo:
-  portscanner 192.168.1.1 1 1000
+  portscanner 192.168.1.1 1 1000 -ft
 """
     print(help_text)
