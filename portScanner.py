@@ -26,7 +26,7 @@ def scan_port(ip, port):
 
 # Función para escanear un rango de puertos
 def port_scanner(ip, start_port, end_port, file_type = None):
-    print(f"Usando IP: {target_ip}, Rango de puertos: {start_port} - {end_port}\n")
+    print(f"Usando IP: {ip}, Rango de puertos: {start_port} - {end_port}\n")
     threads = []
     start_time = time.time()
 
@@ -97,6 +97,5 @@ if __name__ == "__main__":
     if start_port > end_port:
         print("Error: El puerto inicial no puede ser mayor que el puerto final.")
         sys.exit(1)
-
 
     port_scanner(target_ip, start_port, end_port, file_type)
