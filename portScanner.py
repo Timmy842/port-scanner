@@ -1,3 +1,4 @@
+import sys
 import socket
 import threading
 
@@ -32,7 +33,12 @@ def port_scanner(ip, start_port, end_port):
 
 # Main
 if __name__ == "__main__":
-    target_ip = input("Introduce la IP objetivo: ")
-    start_port = int(input("Introduce el puerto inicial: "))
-    end_port = int(input("Introduce el puerto final: "))
+    if len(sys.argv) != 4:
+        print("Uso: ps <target_ip> <start_port> <end_port>")
+        sys.exit(1)
+
+    target_ip = sys.argv[1]
+    start_port = int(sys.argv[2])
+    end_port = int(sys.argv[3])
+
     port_scanner(target_ip, start_port, end_port)
