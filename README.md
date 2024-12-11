@@ -25,24 +25,6 @@ PortScanner es una herramienta sencilla para escanear puertos abiertos en un ran
    cd portscanner
    ```
 
-2. Copia los archivos a `/usr/local/bin` (opcional, para uso global):
-   ```bash
-   sudo mkdir /usr/local/bin/PortScanner
-   sudo cp portScanner.py /usr/local/bin/PortScanner/
-   sudo cp helper.py /usr/local/bin/PortScanner/
-   sudo nano /usr/local/bin/portscanner
-   ```
-
-   En el archivo `portscanner`, añade:
-   ```bash
-   #!/bin/bash
-   python3 /usr/local/bin/PortScanner/portScanner.py "$@"
-   ```
-   Luego, hazlo ejecutable:
-   ```bash
-   sudo chmod +x /usr/local/bin/portscanner
-   ```
-
 ## Uso
 
 ### Ejemplo de comando
